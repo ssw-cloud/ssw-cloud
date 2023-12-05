@@ -1,16 +1,24 @@
-### Hi there 👋
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>页面重定向</title>
+    <script type="text/javascript">
+        // 设置在重定向前的等待时间（毫秒）
+        var delay = 5000; // 5秒
 
-<!--
-**ssw-cloud/ssw-cloud** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+        function redirectToSite() {
+            window.location.href = 'https://ssw2.top';
+        }
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+        // 在页面加载完毕后延迟指定时间执行重定向
+        window.onload = function() {
+            setTimeout(redirectToSite, delay);
+        };
+    </script>
+</head>
+<body>
+    <h1>即将重定向</h1>
+    <p>您将在 5 秒后被自动重定向到 <a href="https://ssw2.top">ssw2.top</a>。</p>
+</body>
+</html>
