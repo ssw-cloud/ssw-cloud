@@ -3,22 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <title>页面重定向</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f7f7f7;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
     <script type="text/javascript">
-        // 设置在重定向前的等待时间（毫秒）
         var delay = 5000; // 5秒
 
         function redirectToSite() {
             window.location.href = 'https://ssw2.top';
         }
 
-        // 在页面加载完毕后延迟指定时间执行重定向
         window.onload = function() {
             setTimeout(redirectToSite, delay);
         };
     </script>
 </head>
 <body>
-    <h1>即将重定向</h1>
-    <p>您将在 5 秒后被自动重定向到 <a href="https://ssw2.top">ssw2.top</a>。</p>
+    <div class="container">
+        <h1>即将重定向</h1>
+        <p>您将在 <span id="countdown">5</span> 秒后被自动重定向到 <a href="https://ssw2.top">ssw2.top</a>。</p>
+    </div>
+    <script>
+        var countdownElement = document.getElementById('countdown');
+        var countdownTime = 5;
+        var interval = setInterval(function() {
+            countdownTime--;
+            countdownElement.innerText = countdownTime;
+            if (countdownTime <= 0) clearInterval(interval);
+        }, 1000);
+    </script>
 </body>
 </html>
